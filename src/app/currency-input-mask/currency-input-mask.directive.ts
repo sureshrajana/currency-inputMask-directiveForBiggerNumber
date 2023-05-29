@@ -4,6 +4,7 @@ import {
   HostListener,
   ElementRef,
   forwardRef,
+  Input,
 } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 import { DecimalPipe } from '@angular/common';
@@ -39,7 +40,7 @@ export class CurrencyInputMaskDirective
     this.el = this.elementRef.nativeElement;
   }
 
-  @Input() currencySymbol:string='$';
+  @Input() currencySymbol: string = '$';
 
   @HostListener('focus', ['$event'])
   handleFocus(event: any) {
@@ -165,7 +166,6 @@ export class CurrencyInputMaskDirective
   }
 
   private transformWithPipe(value: Big): string {
-   
     return this.formatBigCurrency(value);
   }
 
