@@ -39,6 +39,8 @@ export class CurrencyInputMaskDirective
     this.el = this.elementRef.nativeElement;
   }
 
+  @Input() currencySymbol:string='$';
+
   @HostListener('focus', ['$event'])
   handleFocus(event: any) {
     const strVal: string = this.getInputValue();
@@ -159,18 +161,11 @@ export class CurrencyInputMaskDirective
       /\B(?=(\d{3})+(?!\d))/g,
       ','
     );
-    return `${currency} ${integerPartWithCommas}.${fractionalPart}`;
+    return `${this.currencySymbol} ${integerPartWithCommas}.${fractionalPart}`;
   }
 
   private transformWithPipe(value: Big): string {
-    // const formattedNumber = new Intl.NumberFormat('en-US', {
-    //   style: 'currency',
-    //   currency: 'USD',
-    //   minimumFractionDigits: 2,
-    //   maximumFractionDigits: 2,
-    // }).format(value.toNumber());
-
-    // return formattedNumber;
+   
     return this.formatBigCurrency(value);
   }
 
