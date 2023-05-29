@@ -1,59 +1,6 @@
-<!-- <table>
 
-  <tr>
-    <td>
-      Lottery winnings:
-    </td>
-    <td>
-      {{ lotteryWinnings | currency : 'USD' : true : '1.2-2' }}
-    </td>
-    <td>
-      <input
-        size="10"
-        [ngModel]="lotteryWinnings"
-        (ngModelChange)="updateWinnings($event)"
-        appCurrencyInputMask
-      >
-    </td>
-    <td>
-      <button (click)="updateWinnings(20000)">Set to 20,000</button>
-    </td>
-  </tr>
 
-  <tr>
-    <td>
-      Debts:
-    </td>
-    <td>
-      {{ debts | currency : 'USD' : true : '1.2-2' }}
-    </td>
-    <td></td>
-    <td></td>
-  </tr>
-
-  <tr>
-    <td>
-      Money left for vacation:
-    </td>
-    <td>
-      {{ moneyRemaining | currency : 'USD' : true : '1.2-2' }}
-    </td>
-    <td>
-      <input
-        size="10"
-        [ngModel]="moneyRemaining"
-        (ngModelChange)="updateRemainingMoney($event)"
-        appCurrencyInputMask
-      >
-    </td>
-    <td>
-      <button (click)="updateRemainingMoney(20000)">Set to 20,000</button>
-    </td>
-  </tr>
-
-</table> -->
-
-<input appCurrencyInputMask />
+<input appCurrencyInputMask  [currencySymbol]="'$'" />
 <div>
   <label> see next</label>
   <input noRoundingCurrencyInput />
