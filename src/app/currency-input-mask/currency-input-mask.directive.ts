@@ -33,7 +33,6 @@ export class CurrencyInputMaskDirective
 
   constructor(
     private elementRef: ElementRef,
-    private decimalPipe: DecimalPipe
   ) {}
 
   ngOnInit() {
